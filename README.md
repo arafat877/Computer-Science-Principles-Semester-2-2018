@@ -1,1 +1,3 @@
-# Computer-Science-Principles-Semester-2-2018
+# Computer Science Principles Semester 2 2018
+
+Java code from CS Principles 
