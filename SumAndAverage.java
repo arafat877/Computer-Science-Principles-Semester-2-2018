@@ -65,7 +65,7 @@ public class SumAndAverage {   // Save as "SumAndAverage.java"
 		//		}
 		//		average = (double)sum/(double)count;
 
-		// 7. Gets the sume of all the numbers between 1 to 100 that are all squared
+		// 7. Gets the sum of all the numbers between 1 to 100 that are all squared
 		int square = 0;
 		for (int number = lowerbound; number <= upperbound; ++number) {
 			square = number * number;
