@@ -1,7 +1,7 @@
 import java.util.Scanner;
 public class Bin2Dec{
 
-	public static int BinaryToDecimal(int binaryNumber){
+	public static int Binary2Decimal(int binaryNumber){
 
 		int decimal = 0;
 		int p = 0;
@@ -25,7 +25,7 @@ public class Bin2Dec{
 		System.out.print("Enter a Binary number: ");
 		binStr = in.nextInt();   // use next() to read a String
 
-		int ret = BinaryToDecimal(binStr);
+		int ret = Binary2Decimal(binStr);
 
 		System.out.println("The equivalent decimal number for binary " + binStr + " is: " + ret);
 	}
