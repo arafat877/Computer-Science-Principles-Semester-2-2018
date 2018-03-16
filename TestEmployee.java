@@ -5,7 +5,6 @@ public class TestEmployee {
 		
 		employee.setSalary(10);
 		System.out.println(employee.getAnnualSalary());
-		employee.raiseSalary(15);
 		
 		System.out.println(employee);
 
