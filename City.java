@@ -18,10 +18,16 @@ public class City {
 	public static void main(String[] args) {
 		City KC = new City("KC");
 		City SF = new City("SF");
-		KC.connectedCities.add(SF);
-		KC.distances.add(1500);
+		City PA = new City("PA");
+		SF.connectedCities.add(KC);
+		SF.connectedCities.add(PA);
+		PA.connectedCities.add(KC);
+		PA.distances.add(2910);
+		KC.distances.add(21);
+		SF.distances.add(1500);
 		
-		System.out.println(KC);
+		System.out.println(SF);
+		
 	}
 
 }
