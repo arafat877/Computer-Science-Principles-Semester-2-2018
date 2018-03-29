@@ -19,14 +19,21 @@ public class City {
 		City KC = new City("KC");
 		City SF = new City("SF");
 		City PA = new City("PA");
+		City SJ = new City("SJ");
 		SF.connectedCities.add(KC);
 		SF.connectedCities.add(PA);
 		PA.connectedCities.add(KC);
+		SJ.connectedCities.add(KC);
 		PA.distances.add(2910);
 		KC.distances.add(21);
 		SF.distances.add(1500);
+		SJ.distances.add(201);
 		
 		System.out.println(SF);
+		System.out.println(KC);
+		System.out.println(PA);
+		System.out.println(SJ);
+		
 		
 	}
 
