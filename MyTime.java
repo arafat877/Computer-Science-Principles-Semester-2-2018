@@ -9,27 +9,21 @@ public class MyTime {
 	}
 
 	public MyTime(int hour, int minute, int second) {
-		if (hour >= 23) {
+		if (hour <= 23) {
 			this.hour = hour;
 		}
-		if (minute >= 59) {
+		if (minute <= 59) {
 			this.minute = minute;
 		}
-		if (second >= 59) {
+		if (second <= 59) {
 			this.second = second;
 		}
 	}
 
 	public void setTime(int newhour, int newminute, int newsecond) {
-		if (newhour >= 23) {
-			newhour = hour;
-		}
-		if (newminute >= 59) {
-			newminute = minute;
-		}
-		if (newsecond >= 59) {
-			newsecond = second;
-		}
+		setHour(newhour);
+		setMinute(newminute);
+		setSecond(newsecond);
 	}
 
 	public int getHour() {
@@ -45,8 +39,8 @@ public class MyTime {
 	}
 
 	public void setHour(int newhour) {
-		if (newhour >= 23) {
-			newhour = hour;
+		if (newhour <= 23) {
+			hour = newhour;
 		}
 		else if (newhour <= 0){
 			setHour(0);
@@ -57,8 +51,8 @@ public class MyTime {
 	}
 
 	public void setMinute(int newminute) {
-		if (newminute >= 59) {
-			newminute = minute;
+		if (newminute <= 59) {
+			minute = newminute;
 		}
 		else if (newminute <= 0){
 			setMinute(0);
@@ -69,8 +63,8 @@ public class MyTime {
 	}
 
 	public void setSecond(int newsecond) {
-		if (newsecond >= 59) {
-			newsecond = second;
+		if (newsecond <= 59) {
+			second = newsecond;
 		}
 		else if (newsecond <= 0){
 			setSecond(0);
@@ -84,45 +78,45 @@ public class MyTime {
 		String zeroHour = Integer.toString(hour);
 		String zeroMinute = Integer.toString(minute);
 		String zeroSecond = Integer.toString(second);
-		if (hour > 10) {
+		if (hour < 10) {
 			zeroHour = "0" + zeroHour;
 		}
-		if (minute > 10) {
+		if (minute < 10) {
 			zeroMinute = "0" + minute;
 		}
-		if (second > 10) {
+		if (second < 10) {
 			zeroSecond = "0" + second;
 		}
 		return zeroHour + ":" + zeroMinute + ":" + zeroSecond;
 	}
 	
 	public MyTime nextSecond() {
-		setSecond(second++);
+		setSecond(second + 1);
 		return this;
 	}
 	
 	public MyTime nextMinute() {
-		setMinute(minute++);
+		setMinute(minute + 1);
 		return this;
 	}
 	
 	public MyTime nextHour() {
-		setHour(hour++);
+		setHour(hour + 1);
 		return this;
 	}
 	
 	public MyTime previousSecond() {
-		setSecond(second--);
+		setSecond(second - 1);
 		return this;
 	}
 	
 	public MyTime previousMinute() {
-		setMinute(minute--);
+		setMinute(minute - 1);
 		return this;
 	}
 	
 	public MyTime previousHour() {
-		setHour(hour--);
+		setHour(hour - 1);
 		return this;
 	}
 	
