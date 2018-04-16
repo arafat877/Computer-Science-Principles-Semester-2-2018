@@ -1,8 +1,8 @@
 
 public class MyDate {
-	private int year;
-	private int month;
-	private int day;
+	private int year = 0;
+	private int month = 0;
+	private int day = 0;
 	
 	private static String[] strMonths = new String[] {"Jan", "Feb", "Mar", "Apr", "Aug", "Sept", "Oct", "Nov", "Dec"};
 	private static String[] strDays = new String[] {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
@@ -75,16 +75,19 @@ public class MyDate {
 		if (newYear >= 0 && newYear <= 9999) {
 			year = newYear;
 		}
-		if (year < 0)
 	}
 	
 	public void setMonth(int newMonth) {
-		if (newMonth > = 0 && newMonth <= 12) {
+		if (newMonth >= 0 && newMonth <= 12) {
 			month = newMonth;
 		}
 		if(newMonth > 12) {
 			month = 0;
 			nextYear();
+		}
+		else if (newMonth < 0) {
+			month = 0;
+			previousYear();
 		}
 	}
 	
@@ -92,7 +95,7 @@ public class MyDate {
 		if(newDay > 0 && newDay <= daysInMonths[month - 1]) {
 			day = newDay;
 		}
-		if(isLeapYear(year)) {
+		else if(isLeapYear(year)) {
 			if(month == 2 - 1) {
 				if(newDay > 0 && newDay <= daysInMonths[month - 1] + 1) {
 					day = newDay;
@@ -103,6 +106,14 @@ public class MyDate {
 			day = 0;
 			nextMonth();
 		}
+		if(newDay < 0) {
+			day = 0;
+			previousDay();
+		}
+	}
+	
+	public String toString() {
+		return strDays[getDay()] + Integer.toString(day) + strMonths[getMonth()] + Integer.toString(year);
 	}
 	
 	public MyDate nextDay() {
@@ -125,13 +136,13 @@ public class MyDate {
 		return this;
 	}
 	
-	public MyDate nextMonth() {
-		setMonth(month + 1);
+	public MyDate previousMonth() {
+		setMonth(month - 1);
 		return this;
 	}
 	
-	public MyDate nextYear() {
-		setYear(year + 1);
+	public MyDate previousYear() {
+		setYear(year - 1);
 		return this;
 	}
 	
