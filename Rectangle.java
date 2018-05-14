@@ -1,31 +1,31 @@
 
 public class Rectangle {
-	private float length;
-	private float width;
+	public double length;
+	public double width;
 	
 	public Rectangle() {
-		length = 1.0f;
-		width = 1.0f;
+		length = 1.0;
+		width = 1.0;
 	}
 	
-	public Rectangle(float length, float width) {
+	public Rectangle(double length, double width) {
 		this.length = length;
 		this.width = width;
 	}
 	
-	public float getLength() {
+	public double getLength() {
 		return length;
 	}
 	
-	public void setLength(float newLength) {
+	public void setLength(double newLength) {
 		length = newLength;
 	}
 	
-	public float getWidth() {
+	public double getWidth() {
 		return width;
 	}
 	
-	public void setWidth(float newWidth) {
+	public void setWidth(double newWidth) {
 		width = newWidth;
 	}
 	

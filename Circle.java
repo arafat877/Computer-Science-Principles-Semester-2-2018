@@ -3,17 +3,14 @@
  */
 public class Circle {    // Save as "Circle.java"
    // Private instance variables
-   private double radius;
-   private String color;
+   private double radius = 1.0;
+   private String color = "red";
    
    // Constructors (overloaded)
    public Circle() {                   // 1st Constructor
-      radius = 1.0;
-      color = "red";
    }
    public Circle(double r) {           // 2nd Constructor
       radius = r;
-      color = "red";
    }
    public Circle(double r, String c) { // 3rd Constructor
       radius = r;
@@ -24,10 +21,19 @@ public class Circle {    // Save as "Circle.java"
    public double getRadius() {
       return radius;
    }
+   public void setRadius(double newr) {
+	   radius = newr;
+   }
    public String getColor() {
       return color;
    }
+   public void setColor(String newc) {
+	   color = newc;
+   }
    public double getArea() {
       return radius * radius * Math.PI;
+   }
+   public String toString() {
+	   return "Circle[radius=" + getRadius() + ",color=" + getColor() + "]";
    }
 }
